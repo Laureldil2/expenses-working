@@ -1,0 +1,12 @@
+{
+  "type": "removed",
+  "project_id": "removed",
+  "private_key_id": "removed",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nremoved\n-----END PRIVATE KEY-----\n",
+  "client_email": "removed",
+  "client_id": "removed",
+  "auth_uri": "removed",
+  "token_uri": "removed",
+  "auth_provider_x509_cert_url": "removed",
+  "client_x509_cert_url": "removed"
+}
