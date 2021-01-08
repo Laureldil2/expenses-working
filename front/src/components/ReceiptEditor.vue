@@ -108,6 +108,10 @@
       <div class="form-row mb-3">
         <input type="submit" class="btn btn-outline-success" value="Save" :disabled="this.isDisabled" v-on:click="saveReceipt">
       </div>
+      <div class="form-row mb-3 text-center">
+        <h2>Preview</h2>
+        <img v-bind:src="receiptURL"/>
+      </div>
     </div>
   </form>
 </template>
@@ -118,7 +122,8 @@ import axios from "axios";
 export default {
   name: "ReceiptEditor",
   props: {
-    receiptFilename: String
+    receiptFilename: String,
+    receiptURL: String
   },
   data() {
     return {
@@ -349,6 +354,9 @@ export default {
 </script>
 
 <style scoped>
+h2 {
+  width: 100%;
+}
 h3 {
   margin: 40px 0 0;
 }
@@ -445,4 +453,10 @@ input[type='submit']:disabled {
   border-color:grey;
 }
 
+img {
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid grey;
+  padding: 10px;
+}
 </style>

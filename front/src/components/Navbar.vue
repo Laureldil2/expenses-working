@@ -4,7 +4,7 @@
               aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-    <router-link to="/dashboard">
+    <router-link to="/">
     <a class="navbar-brand" href="#" v-on:click='hideMenu'>
           <img id="logo" src="../../public/receipt3.png" height="40px"/>
         Expenses Inspection
@@ -20,11 +20,11 @@
             <a class="nav-link" href="#" v-on:click='hideMenu'>Receipts</a>
           </li>
         </router-link>
-        <router-link to="/expenses" v-if="logged">
+<!--        <router-link to="/expenses" v-if="logged">
           <li class="nav-item active">
             <a class="nav-link" href="#" v-on:click='hideMenu'>Expenses</a>
           </li>
-        </router-link>
+        </router-link>-->
         <router-link to="/photo-receipts" v-if="logged">
           <li class="nav-item active">
             <a class="nav-link" href="#" v-on:click='hideMenu'>Photo Receipts</a>
@@ -44,7 +44,7 @@
       <form id="buttons" class="form-inline my-2 my-lg-0" v-if="logged">
         <input type="button" class="btn btn-outline-light my-2 my-sm-0" v-on:click="$router.push('/admin').catch(err => {})" value="Admin"
                v-if="admin">
-        <input type="button" class="btn btn-outline-light" v-on:click="$router.push('/settings').catch(err => {})"
+        <input type="button" class="btn btn-outline-light" v-on:click="hideMenu(); $router.push('/settings').catch(err => {})"
                value="Settings">
         <input type="button" class="btn btn-outline-light my-2 my-sm-0" v-on:click="logout"
                value="Logout">
@@ -156,6 +156,8 @@ input[type=button]{
 }
 .position-fixed {
   width: 100%;
+  top:0px;
+  left: 0px;
 }
 
 </style>

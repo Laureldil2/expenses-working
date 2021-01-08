@@ -34,10 +34,10 @@
           <font-awesome-icon class="trash" icon="trash-alt" v-on:click="deletePhotoReceipt(photoReceipt.name) "/>
           <img v-bind:src="photoReceipt.url"/>
         </div>
-        <div class="alert process" v-on:click="runEditor(photoReceipt.name)"><h4>Process</h4></div>
+        <div class="alert process" v-on:click="runEditor(photoReceipt)"><h4>Process</h4></div>
       </div>
     </div>
-      <ReceiptEditor :receiptFilename=currentReceipt v-if="isEditor" v-on:close-editor="closeEditor"></ReceiptEditor>
+      <ReceiptEditor :receiptFilename=currentReceipt :receiptURL=currentURL v-if="isEditor" v-on:close-editor="closeEditor"></ReceiptEditor>
   </div>
 </template>
 
@@ -54,7 +54,8 @@ export default {
     return {
       photoReceipts: [],
       isEditor: false,
-      currentReceipt: ""
+      currentReceipt: "",
+      currentURL: ""
     }
   },
   methods: {
@@ -159,8 +160,9 @@ export default {
         this.$root.$emit('message', {msg: "First you need to select a receipt from your device!", success: false})
       }
     },
-    runEditor(receiptFilename) {
-      this.currentReceipt = receiptFilename;
+    runEditor(receipt) {
+      this.currentReceipt = receipt.name;
+      this.currentURL = receipt.url;
       this.isEditor = true;
     }
   },

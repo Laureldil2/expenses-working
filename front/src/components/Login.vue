@@ -117,7 +117,7 @@ input[type=submit] {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 50px);
+  min-height: calc(100vh - 70px);
 }
 
 #register-label {

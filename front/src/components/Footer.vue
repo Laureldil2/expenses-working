@@ -1,6 +1,6 @@
 <template>
   <footer class="footer footer-expand-lg footer-dark bg-dark">
-      Copyright &copy; {{ new Date().getFullYear() }}  Laureldil2
+      Copyright &copy; {{ new Date().getFullYear() }}  Dominik Szczepański 216897
   </footer>
 </template>
 
